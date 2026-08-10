@@ -1,0 +1,207 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import WordBriefMenu from "../../components/WordBriefMenu.astro";
+import aufgabenbereichDetailUrl from "../../assets/aufgabenbereich_1.png?url";
+import optionenUrl from "../../assets/optionen.png?url";
+---
+
+<BaseLayout
+  title="WordBrief 365 Anleitung | Claus Schiroky"
+  description="Anleitung für WordBrief 365: Dokumentvorlagen vorbereiten, Textmarken einrichten, Optionen konfigurieren und Briefe erstellen."
+>
+  <section class="content-shell">
+    <div class="container">
+      <span class="eyebrow no-line home-format">WordBrief 365</span><h1
+        class="gradient-text instructions-title"
+      >
+        Anleitung
+      </h1>
+      <div class="wordbrief-subpage-layout">
+        <div class="prose">
+          <h2>Vor der ersten Verwendung</h2>
+          <p>
+            Zur korrekten Funktionalität von WordBrief 365 muss eine
+            Dokumentvorlage (*.dotx) vorbereitet bzw. erstellt werden.
+            Standardmäßig wird die im Lieferumfang enthaltene Beispielvorlage
+            "WordBrief 365 Dokumentvorlage.dotx" exemplarisch vorkonfiguriert.
+            Auf Basis der gewählten Dokumentvorlage wird ein Dokument von
+            WordBrief 365 erstellt. In der verwendeten Vorlage müssen zur
+            Brieferstellung bestimmte Textmarken verpflichtend vorhanden sein.
+            Diese Textmarken werden von WordBrief 365 automatisiert angesprungen
+            und mit den betreffenden Daten befüllt:
+          </p>
+          <div
+            class="link-row textmark-chips"
+            aria-label="Benötigte Textmarken"
+          >
+            <span class="chip">Adresse</span>
+            <span class="chip">Anrede</span>
+            <span class="chip">Betreff</span>
+            <span class="chip">Datum</span>
+            <span class="chip">Text</span>
+          </div>
+          <p>
+            Die zum Lieferumfang gehörenden Beispielvorlagen können nach eigener
+            individueller Anpassung weiterverwendet werden. Der Dateiname einer
+            Vorlage kann beliebig umbenannt werden. Sie finden diese in Ihrem
+            Standard-Benutzervorlagenverzeichnis von Word (beim ersten Start von
+            Word mit WordBrief 365 werden die Beispielvorlagen in das
+            Verzeichnis kopiert).
+          </p>
+          <p>
+            <strong>WICHTIG:</strong> Die Beispielvorlagen beinhalten ein Form/Shape
+            (Textfeld), in das Text für die Adresse automatisiert eingetragen wird
+            und in der sich die Textmarke Adresse befindet. Dieses Textfeld darf nicht
+            entfernt werden und es muss den Namen "Adressfeld" haben. Andernfalls
+            tritt ein Fehler auf und WordBrief 365 funktioniert nicht wie erwartet.
+            Behalten Sie dieses Textfeld bei, wenn Sie die Beispielvorlage anpassen
+            und verwenden wollen. Andernfalls müssten Sie einem neuen Textfeld nach
+            dem Einfügen den Namen "Adressfeld" manuell zuweisen und die Textmarke
+            Adresse darin festlegen.
+          </p>
+          <p>
+            Bei Verwendung einer neuen Dokumentvorlage: Fügen Sie nur ein
+            Textfeld ein und benennen es dann über den Visual Basic Editor von
+            Microsoft Word um (erreichbar über die Tastenkombination
+            [ALT]+[F11]), bevor ggf. weitere Textfelder in die Vorlage eingefügt
+            werden. Über das Direktfenster (Menü Ansicht) und folgender Eingabe
+            darin, kann der benötigte Name "Adressfeld" definiert werden:
+          </p>
+          <pre><code>Word.ActiveDocument.Shapes(1).Name = "Adressfeld"</code></pre>
+          <p>Bestätigen Sie diese Eingabe mit der Eingabetaste.</p>
+
+          <h2>Bedienung</h2>
+          <img
+            class="task-pane-screenshot"
+            src={aufgabenbereichDetailUrl}
+            alt="WordBrief-365-Aufgabenbereich zur Erstellung eines Dokuments"
+            width="562"
+            height="1135"
+            loading="lazy"
+          />
+          <p>
+            Nach erfolgreicher Installation von WordBrief 365 finden Sie das
+            Menüband (Ribbon) "WordBrief" in Word. Dieses Ribbon enthält die
+            Schaltflächen Optionen, Anleitung, Info sowie Aufgabenbereich (Task
+            Pane).
+          </p>
+          <p>
+            Die Bedienung von WordBrief 365 ist kinderleicht. Im rechts
+            abgebildeten Formular des Aufgabenbereiches geben Sie entweder
+            manuell die gewünschten Daten ein oder Sie klicken auf "Outlook
+            Kontakt wählen" und selektieren einen Ihrer Kontakte aus Microsoft
+            Outlook. Letztere Funktionalität ist nur gegeben, wenn auch eine
+            Version von Microsoft Outlook installiert und ein Profil
+            eingerichtet ist. Über die Auswahl der Dokumentvorlage können Sie
+            abweichend von der Standardvorlage für WordBrief 365 auch eine
+            andere, alternative Vorlage zur Erstellung eines Briefes wählen. Die
+            hier zuletzt verwendete Vorlage wird zukünftig als Standard
+            verwendet und im Formular vorbelegt.
+          </p>
+          <p>
+            Hinweis: Die verwendeten Informationen für den Empfänger müssen zur
+            Verwendung einer korrekten Briefadresse bestimmte Pflichtfelder
+            enthalten. Ohne Nachname, Straße, PLZ und Ort kann kein Brief
+            adressiert werden. Sollte eine notwendige Information fehlen, wird
+            WordBrief 365 darauf hinweisen. Bitte beachten Sie auch, dass
+            Informationen im aktuellen Dokument mit einem Klick auf "Dokument
+            erstellen" immer überschrieben werden.
+          </p>
+          <p>
+            Wollen Sie mit der Eingabe neuer Daten beginnen, klicken Sie
+            "Formular zurücksetzten" und das Formular wird auf den Standard
+            zurückgesetzt.
+          </p>
+          <p>
+            Mit einem Klick auf die Schaltfläche "Dokument erstellen" wird dann
+            automatisch die im Vorfeld gewählte Dokumentvorlage in das aktuelle
+            Dokument eingefügt und mit den gewählten Informationen befüllt. Sie
+            können dann direkt anfangen Ihren Text zu schreiben.
+          </p>
+
+          <h2 class="options-heading">Optionen</h2>
+          <img
+            class="options-screenshot"
+            src={optionenUrl}
+            alt="WordBrief-365-Dialog mit Empfänger- und Benutzeroberflächenoptionen"
+            width="703"
+            height="615"
+            loading="lazy"
+          />
+        </div>
+        <WordBriefMenu active="anleitung" />
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .prose h2 {
+    font-size: 1.2rem;
+  }
+
+  .prose > h2:first-child {
+    margin-top: 1.03rem;
+  }
+
+  .prose pre {
+    overflow-x: auto;
+    padding: 1rem;
+    border: 1px solid rgba(0, 245, 255, 0.18);
+    border-radius: 12px;
+    background: rgba(13, 17, 27, 0.78);
+    color: #f4f8ff;
+  }
+
+  .textmark-chips {
+    margin-bottom: 1rem;
+  }
+
+  .textmark-chips .chip:hover {
+    color: #00f5ff;
+    text-shadow: none;
+  }
+
+  .options-screenshot {
+    display: block;
+    width: 520px;
+    max-width: 100%;
+    height: auto;
+    margin-top: 1.03rem;
+    border-radius: 12px;
+  }
+
+  .task-pane-screenshot {
+    float: right;
+    width: 340px;
+    max-width: 48%;
+    height: auto;
+    margin: 1.03rem 0 1rem 1.5rem;
+    border-radius: 12px;
+  }
+
+  .options-heading {
+    clear: both;
+  }
+
+  @media (max-width: 620px) {
+    .options-screenshot,
+    .task-pane-screenshot {
+      float: none;
+      width: 100%;
+      max-width: 100%;
+      object-fit: contain;
+      margin: 1.03rem 0 1rem;
+    }
+  }
+
+  :global(.content-shell h1.instructions-title) {
+    display: table;
+    width: auto;
+    overflow: visible;
+    line-height: 1.08;
+    padding: 0 0.12em 0.3em 0;
+    margin-bottom: -0.3em;
+    background-image: linear-gradient(90deg, #ff2d95 0%, #00f5ff 100%);
+  }
+</style>

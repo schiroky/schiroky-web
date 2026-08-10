@@ -1,0 +1,138 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="Claus Schiroky – Interessen, Software und Engagement"
+  description="Private Homepage von Claus Schiroky mit Einblicken in Hobbies, Softwareprojekte rund um Microsoft 365 und soziales Engagement."
+>
+  <section class="hero">
+    <div class="container">
+      <div class="hero-copy">
+        <span class="home-eyebrow">Homepage</span>
+        <h1 class="gradient-text home-title">
+          Willkommen in meinem Teil des Netzes!
+        </h1>
+        <p>
+          Freut mich, dass du hergefunden hast. Meine Homepage liefert ein paar
+          Informationen dazu, was mich in meiner Freizeit beschäftigt, wo meine
+          Interessen liegen und greift vielleicht das eine oder andere Thema
+          auf. Schließlich ist auf einer privaten Homepage alles möglich.
+        </p>
+        <p>
+          Außerdem ist sie eine Kontaktmöglichkeit für all diejenigen, die mich
+          im Laufe der Zeit aus den Augen verloren haben. Viel Spaß beim Surfen!
+        </p>
+        <div class="hero-actions">
+          <a class="button" href="/ueber-mich">Mehr über mich</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <span class="home-eyebrow">Entdecken</span><h2
+            class="gradient-text home-title section-title"
+          >
+            Interessen, Projekte & Engagement
+          </h2>
+        </div>
+      </div>
+      <div class="grid">
+        <a class="card" href="/hobbies"
+          ><h3>Hobbies</h3><p>
+            Sport, Movies, Games, Heimkino und alles, was einen guten Ausgleich
+            zum Computer schafft.
+          </p></a
+        >
+        <a class="card pink" href="/software"
+          ><h3>Software</h3><p>
+            WordBrief 365, Compliance Utility: Projekte rund um Microsoft 365
+            und Information Protection.
+          </p></a
+        >
+        <a class="card violet" href="/hilat-al-bir"
+          ><h3>Hilat Al Bir</h3><p>
+            Mein langjähriges Engagement für Freunde von Hilat Al Bir e.V. und
+            Bildungsprojekte im Sudan.
+          </p></a
+        >
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .hero {
+    position: relative;
+    padding-bottom: 1.5rem;
+  }
+
+  .section {
+    padding-top: 1.5rem;
+  }
+
+  :global(footer) {
+    padding-top: 2rem;
+  }
+
+  .grid .card {
+    border-color: transparent;
+  }
+
+  .grid .card h3 {
+    transition: color 0.2s ease;
+  }
+
+  .grid .card:hover h3 {
+    color: #ff2d95;
+  }
+
+  .grid .card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    padding: 1px;
+    border-radius: inherit;
+    background: linear-gradient(90deg, #ff2d95, #00f5ff);
+    -webkit-mask:
+      linear-gradient(#000 0 0) content-box,
+      linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+
+  .section-head {
+    margin-bottom: 1.5rem;
+  }
+
+  .section-title {
+    line-height: 1.2;
+    padding-bottom: 0.2em;
+  }
+
+  .hero-copy p {
+    max-width: 55rem;
+    line-height: 1.6;
+  }
+
+  .home-eyebrow {
+    display: inline-flex;
+    color: #fff;
+    font-size: 0.92rem;
+    font-weight: 700;
+    letter-spacing: normal;
+    text-transform: none;
+  }
+
+  .home-title {
+    display: table;
+    width: auto;
+    font-size: clamp(1rem, 3.6vw, 3.2rem);
+    white-space: nowrap;
+    background-image: linear-gradient(90deg, #ff2d95, #00f5ff);
+  }
+</style>

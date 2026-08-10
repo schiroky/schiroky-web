@@ -1,0 +1,129 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import WordBriefMenu from "../components/WordBriefMenu.astro";
+import aufgabenbereichUrl from "../assets/aufgabenbereich.png?url";
+const wordBriefSchema = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  name: "WordBrief 365",
+  applicationCategory: "BusinessApplication",
+  operatingSystem:
+    "Windows 10, Windows 11, Windows Server 2019, Windows Server 2022, Windows Server 2024",
+  softwareVersion: "5.2.0.5",
+  description:
+    "Microsoft-Word-Erweiterung zur automatisierten Erstellung von Briefen auf Basis eigener Dokumentvorlagen.",
+  author: { "@type": "Person", name: "Claus Schiroky" },
+  offers: { "@type": "Offer", price: "29.90", priceCurrency: "EUR" },
+};
+---
+
+<BaseLayout
+  title="WordBrief 365 – Briefe in Microsoft Word erstellen"
+  description="WordBrief 365 unterstützt die automatisierte Erstellung von Briefen in Microsoft Word mit eigenen Dokumentvorlagen und Outlook-Kontakten."
+  structuredData={wordBriefSchema}
+>
+  <section class="content-shell">
+    <div class="container">
+      <span class="eyebrow no-line home-format">Software</span><h1
+        class="gradient-text wordbrief-title"
+      >
+        WordBrief 365
+      </h1>
+      <div class="wordbrief-layout">
+        <div class="wordbrief-content prose">
+          <p>
+            Ein Helfer für die schnelle Erstellung standardisierter Briefe und
+            Dokumente in Microsoft Word.
+          </p><p>
+            WordBrief 365 erleichtert die Erstellung von Standard-Dokumenten in
+            Microsoft Word, indem Informationen automatisiert in das aktuelle
+            Dokument eingefügt werden. Diese Informationen umfassen die
+            Empfängeradresse, den Betreff, das Datum und die Anrede für einen
+            Brief. Hierbei besteht auch die Möglichkeit zum Zugriff auf die
+            Standard-Kontakte von Microsoft Outlook zur Auswahl einer Adresse.
+          </p>
+
+          <p class="wordbrief-feature">
+            <img
+              class="wordbrief-screenshot"
+              src={aufgabenbereichUrl}
+              alt="WordBrief-365-Menüband mit den Schaltflächen Aufgabenbereich, Optionen, Anleitung und Info"
+              width="567"
+              height="371"
+              loading="lazy"
+            />
+            Bei WordBrief 365 handelt es sich um eine Erweiterung für Microsoft Word.
+            WordBrief 365 fügt das Menüband (Ribbon) "WordBrief" zu Word hinzu. Dieses
+            Ribbon enthält die Schaltflächen Optionen, Anleitung, Info sowie die Schaltfläche
+            Aufgabenbereich, welche gleichnamigen Aufgabenbereich (Task Pane) in Word
+            ein- oder ausblendet. Dieser Aufgabenbereich stellt die zentralen Funktionen
+            von WordBrief 365 zur Verfügung. Weiterführende Informationen zur Bedienung
+            finden Sie in der Anleitung zu WordBrief 365.
+          </p>
+          <p>
+            Welchen Vorteil verschafft mir diese Word-Erweiterung? Anstatt immer
+            wieder die gleiche Vorlage in Word für ein neues Dokument
+            auszuwählen und damit immer wiederkehrende Korrespondenz umzusetzen,
+            erleichtert WordBrief 365 diese Aufgabe: die Produktivität im
+            täglichen Alltag wird gesteigert, indem Adresse, Betreff, Datum und
+            Anrede automatisiert in das aktuelle Dokument eingefügt werden. Man
+            braucht nur noch mit dem Schreiben des Textes zu beginnen.
+          </p>
+
+          <a class="button" href="/software">Zurück zu Software</a>
+        </div>
+        <WordBriefMenu />
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  :global(.content-shell h1.wordbrief-title) {
+    display: table;
+    width: auto;
+    background-image: linear-gradient(90deg, #ff2d95 0%, #00f5ff 100%);
+  }
+
+  .wordbrief-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 190px;
+    align-items: start;
+    gap: 2rem;
+  }
+
+  .wordbrief-content > p:first-child {
+    margin-top: 1em;
+  }
+
+  :global(.wordbrief-screenshot) {
+    float: left;
+    width: 300px;
+    max-width: 100%;
+    height: auto;
+    margin: 0.35rem 1.5rem 1rem 0;
+    border-radius: 12px;
+  }
+
+  .wordbrief-feature {
+    display: flow-root;
+  }
+
+  .wordbrief-feature {
+    margin-top: 0;
+  }
+
+  @media (max-width: 620px) {
+    :global(.wordbrief-screenshot) {
+      float: none;
+      width: 100%;
+      margin: 1rem 0;
+    }
+  }
+
+  @media (max-width: 820px) {
+    .wordbrief-layout {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

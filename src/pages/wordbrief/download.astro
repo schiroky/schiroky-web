@@ -1,0 +1,87 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import WordBriefMenu from "../../components/WordBriefMenu.astro";
+---
+
+<BaseLayout
+  title="WordBrief 365 herunterladen | Claus Schiroky"
+  description="WordBrief 365 Version 5.2.0.5 herunterladen: Installationshinweise, Systemvoraussetzungen und Informationen zu automatischen Updates."
+>
+  <section class="content-shell">
+    <div class="container download-page">
+      <span class="eyebrow no-line home-format">WordBrief 365</span><h1
+        class="gradient-text download-title"
+      >
+        Download
+      </h1>
+      <div class="wordbrief-subpage-layout">
+        <div class="prose">
+          <p>
+            Installationsdatei herunterladen: <a
+              class="footer-style-hover"
+              href="https://www.schiroky.com/download/WordBrief-365/setup.exe"
+              >WordBrief 365 (Version 5.2.0.5)</a
+            >.
+          </p>
+          <p>
+            <strong>WICHTIG:</strong> Indem Sie WordBrief 365 installieren, kopieren
+            oder anderweitig verwenden, erklären Sie sich einverstanden, durch die
+            Bestimmungen des <a
+              class="footer-style-hover"
+              href="/wordbrief/lizenzvertrag">Softwarelizenz-Vertrages</a
+            > gebunden zu sein. Falls Sie den Bestimmungen dieses Softwarelizenz-Vertrages
+            nicht zustimmen, sind Sie nicht berechtigt, WordBrief 365 zu installieren
+            oder zu verwenden.
+          </p>
+          <p>
+            Es wird dringend empfohlen die Installation von WordBrief 365 direkt
+            über den hier angebotenen Hyperlink durchzuführen, denn nur dann
+            wird sich WordBrief 365 bei Verfügbarkeit eines Updates automatisch
+            aktualisieren. Durch den Klick auf den Hyperlink gibt der verwendete
+            Browser eine Meldung aus, ob die Datei heruntergeladen oder
+            ausgeführt werden soll. Hier müssen Sie Ausführen wählen.
+          </p>
+
+          <h2>Installation</h2>
+          <p>
+            Die Installation von WordBrief 365 gestaltet sich einfach und
+            selbsterklärend. Durch den Start des Installationsprogrammes für
+            WordBrief 365 (setup.exe) wird ein Assistent gestartet, der Sie bis
+            zum Ende der Installation begleitet. Sie brauchen nur den
+            Anweisungen zu folgen.
+          </p>
+          <p>
+            Nach erfolgreicher Installation finden Sie das Menüband (Ribbon)
+            "WordBrief" in Word, über das auf die Funktionen von WordBrief 365
+            zur Verwendung zugegriffen werden kann. Weiterführende Informationen
+            zur Bedienung finden Sie in der <a
+              class="footer-style-hover"
+              href="/wordbrief/anleitung">Anleitung</a
+            >{" "}
+            zu WordBrief 365.
+          </p>
+
+          <h2>Systemvoraussetzungen</h2>
+          <p>
+            Microsoft 365 Apps oder Office 2024.<br />
+            Microsoft Windows Windows 11, Windows Server 2019, 2022 und Windows Server
+            2025.
+          </p>
+        </div>
+        <WordBriefMenu active="download" />
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .prose h2 {
+    font-size: 1.2rem;
+  }
+
+  :global(.content-shell h1.download-title) {
+    display: table;
+    width: auto;
+    background-image: linear-gradient(90deg, #ff2d95 0%, #00f5ff 100%);
+  }
+</style>

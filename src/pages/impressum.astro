@@ -1,0 +1,73 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="Impressum | Claus Schiroky"
+  description="Impressum und Anbieterkennzeichnung der privaten Homepage von Claus Schiroky."
+>
+  <section class="content-shell">
+    <div class="container prose">
+      <span class="eyebrow no-line home-format">Rechtliches</span><h1
+        class="gradient-text impressum-title"
+      >
+        Impressum
+      </h1>
+      <p>
+        Diese private Homepage wird betrieben von (Angaben gemäß §5 <a
+          class="footer-style-hover"
+          href="https://www.gesetze-im-internet.de/ddg/__5.html"
+          target="_blank"
+          rel="noreferrer">DDG</a
+        >):
+      </p><p>
+        Claus Schiroky<br />E-Mail: <a
+          class="footer-style-hover"
+          href="mailto:claus@schiroky.com">claus@schiroky.com</a
+        >
+      </p>
+      <h2>Rechtliche Hinweise</h2><p>
+        Alle Angaben und Inhalte dieses Angebotes wurden sorgfältig erstellt und
+        geprüft. Der Websitebetreiber ist bemüht, das Angebot aktuell,
+        vollständig und frei von inhaltlichen Fehlern anzubieten. Dennoch kann
+        trotz größter Sorgfalt das Auftreten von Fehlern nicht völlig
+        ausgeschlossen werden, so dass eine Garantie für die Vollständigkeit,
+        Richtigkeit, Aktualität und permanente Verfügbarkeit nicht übernommen
+        wird.
+      </p>
+      <h2>Gewährleistungsausschluss</h2><p>
+        Trotz sorgfältiger inhaltlicher Kontrolle wird keine Haftung für die
+        Inhalte externer Links übernommen. Für den Inhalt der verlinkten Seiten
+        sind ausschließlich deren Betreiber verantwortlich. Für etwaige
+        Satzfehler sowie für die Richtigkeit der Eintragungen übernimmt der
+        Websitebetreiber keine Gewähr. Alle auf dieser Website genannten
+        Produktnamen, Produktbezeichnungen und Logos sind eingetragene
+        Warenzeichen und Eigentum der jeweiligen Rechteinhaber.
+      </p><p>
+        Der Zugang und die Benutzung dieser Website geschieht auf eigene Gefahr.
+        Der Websitebetreiber übernimmt keinerlei Haftung für etwaige Schäden,
+        die durch den oder in Verbindung mit dem Zugang und/oder der Benutzung
+        dieser Website auftreten.
+      </p>
+      <h2>Urheberrecht</h2><p>
+        Sämtliche Texte, Bilder und andere veröffentlichten Informationen
+        unterliegen, sofern nicht anders gekennzeichnet, dem Copyright des
+        Websitebetreibers. Jede Vervielfältigung, Verbreitung, Speicherung,
+        Sendung und Wieder- bzw. Weitergabe der Inhalte ist ohne schriftliche
+        Genehmigung ausdrücklich untersagt.
+      </p>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .prose h2 {
+    font-size: 1.2rem;
+  }
+
+  :global(.content-shell h1.impressum-title) {
+    display: table;
+    width: auto;
+    background-image: linear-gradient(90deg, #ff2d95 0%, #00f5ff 100%);
+  }
+</style>

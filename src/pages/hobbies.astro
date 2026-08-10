@@ -1,0 +1,122 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { Image } from "astro:assets";
+import gamingGildeLogo from "../assets/GamingGildeLogo.png";
+---
+
+<BaseLayout
+  title="Hobbies | Claus Schiroky"
+  description="Die Hobbies von Claus Schiroky: Sport, Filme, Heimkino, Gaming, Wing Chun, Field-Target-Schießen und ehrenamtliches Community-Engagement."
+>
+  <section class="content-shell">
+    <div class="container">
+      <span class="eyebrow no-line home-format">Freizeit</span><h1
+        class="gradient-text hobbies-title"
+      >
+        Hobbies
+      </h1><p>
+        Ausgleich, Unterhaltung und Technik – mit einer deutlichen Schwäche für
+        Games und Computer.
+      </p>
+      <div class="grid two" style="margin-top:2rem">
+        <article class="card">
+          <h2>Sport</h2><p>
+            Wer lange am Computer arbeitet, braucht auch seinen Ausgleich. Dazu
+            versuche ich regelmäßig etwas Sport zu betreiben. Mit meinem Pedelec
+            das heimische Umland erkunden oder etwas Nordic Walking – wenn es
+            das Wetter zulässt. Und gelegentlich habe ich Spaß an Wing Chun und
+            Field-Target-Schießen.
+          </p>
+        </article>
+        <article class="card pink">
+          <h2>Movies</h2><p>
+            Als Heimkino-Enthusiast mit hochwertigem Heimkino-Surround-System
+            und UHD-TV ausgestattet, schaue ich Zuhause gerne Movies meiner
+            bevorzugten Genres: Action, Horror, Science-Fiction und ab und an
+            auch einmal etwas Lustiges wie eine Komödie oder Animation.
+          </p>
+        </article>
+        <article class="card violet">
+          <h2>Games</h2><p>
+            Als Mann darf man sich das Kindsein bewahren – deshalb spiele ich
+            gerne, ob digital oder klassisch bei Brett- und Gesellschaftsspielen
+            in geselliger Runde.
+          </p><p>
+            Computerspiele faszinieren mich etwas mehr. Dazu zählen Age of
+            Empires, Forza, Dead by Daylight oder Aufbauspiele wie Minecraft.
+          </p>
+        </article>
+        <a
+          class="card gaming-community-card"
+          href="https://gaming-gilde.org"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <h2>Gaming Community</h2><p>
+            Ich engagiere mich ehrenamtlich in einer Gaming-Community. Immer auf
+            der Suche nach coolen Leuten, die einfach Bock haben, in einer
+            entspannten, gemütlichen Runde zusammen zu zocken – komplett ohne
+            Stress, Ruhm oder Profitgedanken:
+          </p><Image
+            class="gaming-gilde-logo"
+            src={gamingGildeLogo}
+            alt="Gaming Gilde"
+          />
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  :global(.content-shell h1.hobbies-title) {
+    display: table;
+    width: auto;
+    background-image: linear-gradient(90deg, #ff2d95 0%, #00f5ff 100%);
+  }
+
+  .grid .card {
+    border-color: transparent;
+  }
+
+  .grid .card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    padding: 1px;
+    border-radius: inherit;
+    background: linear-gradient(90deg, #ff2d95, #00f5ff);
+    -webkit-mask:
+      linear-gradient(#000 0 0) content-box,
+      linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+
+  .grid .card h2 {
+    font-size: 1.22rem;
+    transition: color 0.2s ease;
+  }
+
+  .gaming-community-card:hover h2 {
+    color: #ff2d95;
+  }
+
+  .grid .card p {
+    transition: text-shadow 0.2s ease;
+  }
+
+  .grid .card:hover p {
+    text-shadow: 0 0 14px rgba(0, 245, 255, 0.8);
+  }
+
+  :global(.gaming-gilde-logo) {
+    display: block;
+    max-width: 100%;
+    width: 260px;
+    height: auto;
+    object-fit: contain;
+    margin-top: 1.25rem;
+  }
+</style>

@@ -1,0 +1,126 @@
+---
+import Header from "../components/Header.astro";
+import socialImageUrl from "../assets/CLAUS-Neon.jpg?url";
+import "../styles/global.css";
+const {
+  title = "Claus Schiroky",
+  description = "Die private Homepage von Claus Schiroky.",
+  pageType = "WebPage",
+  structuredData,
+} = Astro.props;
+const year = new Date().getFullYear();
+const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
+const socialImage = new URL(socialImageUrl, Astro.site);
+const personId = new URL("/#person", Astro.site).href;
+const websiteId = new URL("/#website", Astro.site).href;
+const schemas = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": websiteId,
+    url: Astro.site?.href,
+    name: "Claus Schiroky",
+    description:
+      "Private Homepage von Claus Schiroky über Interessen, Softwareprojekte und soziales Engagement.",
+    inLanguage: "de-DE",
+    author: { "@id": personId },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "@id": personId,
+    name: "Claus Schiroky",
+    url: new URL("/ueber-mich", Astro.site).href,
+    image: socialImage.href,
+    sameAs: [
+      "https://github.com/schiroky",
+      "https://www.xing.com/profile/Claus_Schiroky",
+      "https://www.linkedin.com/in/clauss-schiroky",
+    ],
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": pageType,
+    url: canonicalUrl.href,
+    name: title,
+    description,
+    inLanguage: "de-DE",
+    isPartOf: { "@id": websiteId },
+    mainEntity: pageType === "ProfilePage" ? { "@id": personId } : undefined,
+  },
+  ...(structuredData ? [structuredData] : []),
+];
+---
+
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="theme-color" content="#05060a" />
+    <link rel="canonical" href={canonicalUrl} />
+    <link rel="icon" href={socialImageUrl} type="image/jpeg" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:image" content={socialImage} />
+    <meta property="og:image:alt" content="Claus Schiroky" />
+    <meta property="og:locale" content="de_DE" />
+    <meta property="og:site_name" content="Claus Schiroky" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={socialImage} />
+    <script type="application/ld+json" set:html={JSON.stringify(schemas)} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <Header />
+    <main><slot /></main>
+    <footer>
+      <div class="container footer-inner">
+        <span>©{year} Claus Schiroky.</span>
+        <div class="footer-social" aria-label="Social Media">
+          <a
+            class="footer-icon github"
+            href="https://github.com/schiroky"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="GitHub-Profil von Claus Schiroky"></a>
+          <a
+            class="footer-icon steam"
+            href="https://steamcommunity.com/id/schiroky"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Steam-Profil von Claus Schiroky"></a>
+          <a
+            class="footer-icon xbox"
+            href="https://www.xbox.com/de-DE/play/user/S%20C%20H%20I%20R%20O%20K%20Y"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Xbox-Profil von Claus Schiroky"></a>
+          <a
+            class="footer-icon xing"
+            href="https://www.xing.com/profile/Claus_Schiroky"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Xing-Profil von Claus Schiroky"></a>
+          <a
+            class="footer-icon linkedin"
+            href="https://www.linkedin.com/in/clauss-schiroky"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="LinkedIn-Profil von Claus Schiroky"></a>
+        </div>
+        <div class="footer-links">
+          <a href="/datenschutz">Datenschutz</a><a href="/impressum"
+            >Impressum</a
+          >
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

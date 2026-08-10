@@ -1,0 +1,95 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="Softwareprojekte | Claus Schiroky"
+  description="Softwareprojekte von Claus Schiroky rund um Microsoft 365 und Information Protection: WordBrief 365 und Compliance Utility."
+>
+  <section class="content-shell">
+    <div class="container">
+      <span class="eyebrow no-line home-format">Projekte</span><h1
+        class="gradient-text software-title"
+      >
+        Software
+      </h1><p>
+        Kleine Werkzeuge für produktiveres Arbeiten und Troubleshooting im
+        Microsoft-365-Umfeld.
+      </p>
+      <div class="grid two" style="margin-top:2rem">
+        <article class="card">
+          <h2>WordBrief 365</h2><p>
+            WordBrief 365 erleichtert die Erstellung von Standard-Dokumenten,
+            indem Informationen automatisiert in das aktuelle Dokument eingefügt
+            werden. Dazu gehören Empfängeradresse, Betreff, Datum und Anrede für
+            einen Brief. Auch der Zugriff auf Standard-Kontakte von Microsoft
+            Outlook zur Auswahl einer Adresse ist möglich. Danach braucht man
+            nur noch mit dem Schreiben des Textes zu beginnen.
+          </p><a class="button" href="/wordbrief">Mehr zu WordBrief 365</a>
+        </article>
+        <article class="card pink">
+          <h2>Compliance Utility</h2><p>
+            Schon mal die Schaltfläche „Vertraulichkeit“ (Sensitivity) in einer
+            Microsoft-365-App verwendet oder ein Label per Rechtsklick auf eine
+            Datei angewendet, um diese zu verschlüsseln? Falls mit DLP-Policies
+            oder Sensibilitätskennzeichnungen etwas nicht wie erwartet
+            funktioniert oder keine Labels angezeigt werden, hilft das
+            „Compliance Utility“ beim Troubleshooting und bei der Diagnose.
+          </p><div class="link-row">
+            <a
+              class="button"
+              href="https://aka.ms/ComplianceUtility"
+              target="_blank"
+              rel="noreferrer">Compliance Utility öffnen</a
+            >
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  :global(.content-shell h1.software-title) {
+    display: table;
+    width: auto;
+    background-image: linear-gradient(90deg, #ff2d95 0%, #00f5ff 100%);
+  }
+
+  .grid .card {
+    border-color: transparent;
+  }
+
+  .grid .card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    padding: 1px;
+    border-radius: inherit;
+    background: linear-gradient(90deg, #ff2d95, #00f5ff);
+    -webkit-mask:
+      linear-gradient(#000 0 0) content-box,
+      linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+
+  .grid .card h2 {
+    font-size: 1.22rem;
+    color: #00f5ff;
+    transition: color 0.2s ease;
+  }
+
+  .grid .card p {
+    transition: text-shadow 0.2s ease;
+  }
+
+  .grid .card:hover h2 {
+    color: #ff2d95;
+  }
+
+  .grid .card:hover p {
+    text-shadow: 0 0 14px rgba(0, 245, 255, 0.8);
+  }
+</style>

@@ -1,0 +1,96 @@
+---
+import wordbriefIconUrl from "../assets/wordbrief_256.png?url";
+
+const { active = "" } = Astro.props;
+const items = [
+  ["download", "Download", "/wordbrief/download"],
+  ["anleitung", "Anleitung", "/wordbrief/anleitung"],
+  ["support", "Support", "/wordbrief/support"],
+  ["lizenzvertrag", "Lizenzvertrag", "/wordbrief/lizenzvertrag"],
+];
+---
+
+<aside class="wordbrief-menu card" aria-label="WordBrief-Menü">
+  <img
+    class="wordbrief-menu-icon"
+    src={wordbriefIconUrl}
+    alt="WordBrief 365"
+    width="256"
+    height="256"
+  />
+  <nav>
+    {
+      items.map(([key, label, href]) => (
+        <a href={href} aria-current={active === key ? "page" : undefined}>
+          {label}
+        </a>
+      ))
+    }
+  </nav>
+</aside>
+
+<style>
+  .wordbrief-menu {
+    position: sticky;
+    top: 6rem;
+    margin-top: 1.03rem;
+    border-color: transparent;
+  }
+
+  .wordbrief-menu::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    padding: 1px;
+    border-radius: inherit;
+    background: linear-gradient(90deg, #ff2d95, #00f5ff);
+    -webkit-mask:
+      linear-gradient(#000 0 0) content-box,
+      linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+
+  nav {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .wordbrief-menu-icon {
+    display: block;
+    width: 64px;
+    max-width: 100%;
+    height: auto;
+    margin: 0 0 1rem;
+  }
+
+  a {
+    padding: 0.3rem 0;
+    border-bottom: 1px solid rgba(0, 245, 255, 0.14);
+    font-weight: 400;
+  }
+
+  a:first-child {
+    padding-top: 0;
+  }
+
+  a:last-child {
+    padding-bottom: 0;
+    border-bottom: 0;
+  }
+
+  a:hover,
+  a[aria-current="page"] {
+    color: #ff2d95;
+    text-shadow: 0 0 14px rgba(255, 45, 149, 0.8);
+  }
+
+  @media (max-width: 820px) {
+    .wordbrief-menu {
+      position: static;
+      width: 100%;
+      margin-top: 0;
+    }
+  }
+</style>

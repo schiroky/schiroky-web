@@ -1,0 +1,138 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import WordBriefMenu from "../../components/WordBriefMenu.astro";
+---
+
+<BaseLayout
+  title="WordBrief 365 Support | Claus Schiroky"
+  description="Support und Lösungen für bekannte Probleme mit WordBrief 365, Outlook-Kontakten, dem Aufgabenbereich und deaktivierten Add-ins."
+>
+  <section class="content-shell">
+    <div class="container">
+      <span class="eyebrow no-line home-format">WordBrief 365</span><h1
+        class="gradient-text support-title"
+      >
+        Support
+      </h1>
+      <div class="wordbrief-subpage-layout">
+        <div class="prose">
+          <p>
+            Bei der Programmierung von WordBrief 365 wurde größte Sorgfalt auf
+            Qualität und Funktionalität gelegt. Vor der Veröffentlichung wurden
+            umfangreiche Tests durchgeführt, um etwaige Fehler abzufangen und zu
+            behandeln. Dennoch gibt es keinen Garant, dass es unter den
+            verschiedensten Konfigurationen und Umgebungen nicht doch einmal zu
+            einem unerwünschten Verhalten kommt.
+          </p>
+          <p>
+            Sollten Sie sich einmal mit einem Problem in WordBrief 365
+            konfrontiert sehen, nutzten Sie bitte die Informationen auf dieser
+            Seite, damit das Problem mit einer Aktualisierung behoben werden
+            kann und im Vorfeld bis dahin ggf. eine temporäre Lösung gefunden
+            werden kann. Sollte es Fragen geben, Anregungen, Kritik – einfach{
+              " "
+            }
+            <a
+              href="mailto:claus@schiroky.com?subject=WordBrief%20365%20Anfrage"
+              >eine E-Mail senden</a
+            >. Bitte beschreiben Sie dabei das Problem so detailliert wie
+            möglich. Ein Bildschirmfoto (Screenshoot) des Fehlers und/oder eine
+            schrittweise Beschreibung zur Reproduktion des Problems sind dabei
+            sehr hilfreich.
+          </p>
+
+          <h2>Bekannte Probleme</h2>
+
+          <h3>Die Auswahl für "Outlook Kontakt wählen" ist deaktiviert</h3>
+          <p>
+            In den WordBrief-Einstellungen ist die Auswahl für "Kontaktoptionen"
+            deaktiviert.
+          </p>
+          <h4>Hintergrundinformation</h4>
+          <p>
+            Mit WordBrief 365 kann man nur auf Kontakte zugreifen, wenn
+            Microsoft Outlook installiert ist und ein Profil erstellt ist. Ist
+            diese Anwendung nicht zusammen mit Office installiert oder noch kein
+            Profil erstellt, steht diese Funktionalität nicht zur Verfügung.
+          </p>
+          <h4>Antwort</h4>
+          <p>
+            Um den vollen Funktionsumfang von WordBrief 365 zu erhalten,
+            installieren Sie Microsoft Outlook und stellen Sie sicher, dass ein
+            Profil eingerichtet ist.
+          </p>
+
+          <h3>Der Aufgabenbereich lässt sich nicht ein-/ausblenden</h3>
+          <h4>Hintergrundinformation</h4>
+          <p>
+            Das aktuelle Design von WordBrief 365 bedient sich nur der ersten
+            Instanz bzw. dem ersten geöffneten Anwendungsfenster, welches beim
+            Starten von Word angezeigt wird. Damit wird das Menüband (Ribbon)
+            "WordBrief" zwar in jedem Fenster/Dokument angezeigt, die
+            Funktionalität (und damit besagter Aufgabenbereich) jedoch nur in
+            diesem ersten Fenster zur Verfügung gestellt.
+          </p>
+          <h4>Antwort</h4>
+          <p>
+            Bei diesem Verhalten handelt es sich um eine Einschränkung von
+            WordBrief 365. Um das Verhalten zu verhindern, verwenden Sie
+            WordBrief 365 bitte im ersten Fenster/Dokument von Word.
+          </p>
+
+          <h3>Das Menüband wird nicht angezeigt</h3>
+          <p>
+            Das Menüband (Ribbon) "WordBrief" wird nicht mehr in Microsoft Word
+            angezeigt.
+          </p>
+          <h4>Hintergrundinformation</h4>
+          <p>
+            Wenn Word sehr viele Erweiterungen (COM Add-Ins) verwendet, kann das
+            Laden dieser Erweiterungen länger dauern. Damit Word schneller
+            startet, kann es passieren, dass Erweiterungen von Word deaktiviert
+            werden. Wenn WordBrief 365 deaktiviert wurde, fehlt das bekannte
+            Menüband.
+          </p>
+          <h4>Antwort</h4>
+          <p>
+            WordBrief 365 muss aktiviert werden, damit das Menüband wieder
+            verfügbar wird. Gehen Sie dazu in Word auf das Menü Datei &gt;
+            Optionen &gt; Add-Ins und wählen im Dropdown Verwalten den Eintrag
+            "Deaktivierte Elemente". Klicken Sie dann auf die Schaltfläche
+            "Los…". Hier können Sie WordBrief 365 wieder aktivieren.
+          </p>
+        </div>
+        <WordBriefMenu active="support" />
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .prose h2 {
+    font-size: 1.2rem;
+  }
+
+  .prose h3 {
+    font-size: 1.1rem;
+  }
+
+  .prose h4 {
+    margin: 1.5rem 0 0;
+    color: #fff;
+    font-size: 1rem;
+  }
+
+  .prose h4 + p {
+    margin-top: 0.4rem;
+  }
+
+  :global(.content-shell h1.support-title) {
+    display: table;
+    width: auto;
+    overflow: visible;
+    line-height: 1.08;
+    padding: 0 0.12em 0.3em 0;
+    margin-bottom: -0.3em;
+    background-image: linear-gradient(90deg, #ff2d95 0%, #00f5ff 100%);
+  }
+</style>
