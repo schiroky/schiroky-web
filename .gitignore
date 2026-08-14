@@ -1,0 +1,13 @@
+# Dependencies
+node_modules/
+
+# Astro-generated files
+.astro/
+dist/
+
+# Local tooling
+.idea/
+tmp/
+
+# Logs
+*.log
