@@ -61,6 +61,9 @@ import gamingGildeLogo from "../assets/GamingGildeLogo.png";
             class="gaming-gilde-logo"
             src={gamingGildeLogo}
             alt="Gaming Gilde"
+            width={520}
+            format="webp"
+            quality={80}
           />
         </a>
       </div>
@@ -69,6 +72,10 @@ import gamingGildeLogo from "../assets/GamingGildeLogo.png";
 </BaseLayout>
 
 <style>
+  .content-shell {
+    overflow-x: clip;
+  }
+
   :global(.content-shell h1.hobbies-title) {
     display: table;
     width: auto;
@@ -77,6 +84,76 @@ import gamingGildeLogo from "../assets/GamingGildeLogo.png";
 
   .grid .card {
     border-color: transparent;
+  }
+
+  .grid .card:nth-child(1) {
+    animation: card-from-top 0.75s ease-out both;
+  }
+
+  .grid .card:nth-child(2) {
+    animation: card-from-right 0.75s ease-out both;
+  }
+
+  .grid .card:nth-child(3) {
+    animation: card-from-left 0.75s ease-out both;
+  }
+
+  .grid .card:nth-child(4) {
+    animation: card-from-bottom 0.75s ease-out both;
+  }
+
+  @keyframes card-from-top {
+    from {
+      opacity: 0;
+      transform: translateY(-5rem);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes card-from-left {
+    from {
+      opacity: 0;
+      transform: translateX(-5rem);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes card-from-right {
+    from {
+      opacity: 0;
+      transform: translateX(5rem);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes card-from-bottom {
+    from {
+      opacity: 0;
+      transform: translateY(5rem);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .grid .card {
+      animation: none;
+    }
   }
 
   .grid .card::after {

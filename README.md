@@ -15,6 +15,7 @@ Meine privaten Homepage **schiroky.com** erstellt via **Astro.**
 npm install
 npm run dev
 ```
+
 Dev-Server: `http://localhost:4321`
 
 ## Wichtige Befehle

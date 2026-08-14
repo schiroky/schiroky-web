@@ -41,7 +41,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         </div>
       </div>
       <div class="grid">
-        <a class="card" href="/hobbies"
+        <a class="card card-from-left" href="/hobbies"
           ><h3>Hobbies</h3><p>
             Sport, Movies, Games, Heimkino und alles, was einen guten Ausgleich
             zum Computer schafft.
@@ -53,7 +53,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
             und Information Protection.
           </p></a
         >
-        <a class="card violet" href="/hilat-al-bir"
+        <a class="card violet card-from-right" href="/hilat-al-bir"
           ><h3>Hilat Al Bir</h3><p>
             Mein langjähriges Engagement für Freunde von Hilat Al Bir e.V. und
             Bildungsprojekte im Sudan.
@@ -72,6 +72,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
   .section {
     padding-top: 1.5rem;
+    overflow-x: clip;
   }
 
   :global(footer) {
@@ -88,6 +89,45 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
   .grid .card:hover h3 {
     color: #ff2d95;
+  }
+
+  .card-from-left {
+    animation: card-from-left 0.75s ease-out both;
+  }
+
+  .card-from-right {
+    animation: card-from-right 0.75s ease-out both;
+  }
+
+  @keyframes card-from-left {
+    from {
+      opacity: 0;
+      transform: translateX(-5rem);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes card-from-right {
+    from {
+      opacity: 0;
+      transform: translateX(5rem);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .card-from-left,
+    .card-from-right {
+      animation: none;
+    }
   }
 
   .grid .card::after {
