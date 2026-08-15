@@ -16,7 +16,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         Kleine Werkzeuge für produktiveres Arbeiten und Troubleshooting im
         Microsoft-365-Umfeld.
       </p>
-      <div class="grid two" style="margin-top:2rem">
+      <div class="grid two">
         <article class="card">
           <h2>WordBrief 365</h2><p>
             WordBrief 365 erleichtert die Erstellung von Standard-Dokumenten,
@@ -54,16 +54,6 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     overflow-x: clip;
   }
 
-  :global(.content-shell h1.software-title) {
-    display: table;
-    width: auto;
-    background-image: linear-gradient(90deg, #ff2d95 0%, #00f5ff 100%);
-  }
-
-  .grid .card {
-    border-color: transparent;
-  }
-
   .grid .card:first-child {
     animation: card-from-left 0.75s ease-out both;
   }
@@ -72,67 +62,14 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     animation: card-from-right 0.75s ease-out both;
   }
 
-  @keyframes card-from-left {
-    from {
-      opacity: 0;
-      transform: translateX(-5rem);
-    }
-
-    to {
-      opacity: 1;
-      transform: translateX(0);
-    }
-  }
-
-  @keyframes card-from-right {
-    from {
-      opacity: 0;
-      transform: translateX(5rem);
-    }
-
-    to {
-      opacity: 1;
-      transform: translateX(0);
-    }
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    .grid .card:first-child,
-    .grid .card:last-child {
-      animation: none;
-    }
-  }
-
-  .grid .card::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    padding: 1px;
-    border-radius: inherit;
-    background: linear-gradient(90deg, #ff2d95, #00f5ff);
-    -webkit-mask:
-      linear-gradient(#000 0 0) content-box,
-      linear-gradient(#000 0 0);
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
-    pointer-events: none;
-  }
-
   .grid .card h2 {
     font-size: 1.22rem;
     color: #00f5ff;
     transition: color 0.2s ease;
   }
 
-  .grid .card p {
-    transition: text-shadow 0.2s ease;
-  }
-
   .grid .card:hover h2 {
     color: #ff2d95;
   }
 
-  .grid .card:hover p {
-    text-shadow: 0 0 14px rgba(0, 245, 255, 0.8);
-  }
 </style>

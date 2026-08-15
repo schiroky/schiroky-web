@@ -18,7 +18,7 @@ import gamingGildeLogo from "../assets/GamingGildeLogo.png";
         Ausgleich, Unterhaltung und Technik – mit einer deutlichen Schwäche für
         Games und Computer.
       </p>
-      <div class="grid two" style="margin-top:2rem">
+      <div class="grid two">
         <article class="card">
           <h2>Sport</h2><p>
             Wer lange am Computer arbeitet, braucht auch seinen Ausgleich. Dazu
@@ -76,16 +76,6 @@ import gamingGildeLogo from "../assets/GamingGildeLogo.png";
     overflow-x: clip;
   }
 
-  :global(.content-shell h1.hobbies-title) {
-    display: table;
-    width: auto;
-    background-image: linear-gradient(90deg, #ff2d95 0%, #00f5ff 100%);
-  }
-
-  .grid .card {
-    border-color: transparent;
-  }
-
   .grid .card:nth-child(1) {
     animation: card-from-top 0.75s ease-out both;
   }
@@ -102,75 +92,6 @@ import gamingGildeLogo from "../assets/GamingGildeLogo.png";
     animation: card-from-bottom 0.75s ease-out both;
   }
 
-  @keyframes card-from-top {
-    from {
-      opacity: 0;
-      transform: translateY(-5rem);
-    }
-
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  @keyframes card-from-left {
-    from {
-      opacity: 0;
-      transform: translateX(-5rem);
-    }
-
-    to {
-      opacity: 1;
-      transform: translateX(0);
-    }
-  }
-
-  @keyframes card-from-right {
-    from {
-      opacity: 0;
-      transform: translateX(5rem);
-    }
-
-    to {
-      opacity: 1;
-      transform: translateX(0);
-    }
-  }
-
-  @keyframes card-from-bottom {
-    from {
-      opacity: 0;
-      transform: translateY(5rem);
-    }
-
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    .grid .card {
-      animation: none;
-    }
-  }
-
-  .grid .card::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    padding: 1px;
-    border-radius: inherit;
-    background: linear-gradient(90deg, #ff2d95, #00f5ff);
-    -webkit-mask:
-      linear-gradient(#000 0 0) content-box,
-      linear-gradient(#000 0 0);
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
-    pointer-events: none;
-  }
-
   .grid .card h2 {
     font-size: 1.22rem;
     transition: color 0.2s ease;
@@ -178,14 +99,6 @@ import gamingGildeLogo from "../assets/GamingGildeLogo.png";
 
   .gaming-community-card:hover h2 {
     color: #ff2d95;
-  }
-
-  .grid .card p {
-    transition: text-shadow 0.2s ease;
-  }
-
-  .grid .card:hover p {
-    text-shadow: 0 0 14px rgba(0, 245, 255, 0.8);
   }
 
   :global(.gaming-gilde-logo) {

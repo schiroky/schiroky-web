@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import ProtectedEmailLink from "../components/ProtectedEmailLink.astro";
 import { Image } from "astro:assets";
 import fotoClaus from "../assets/FotoClaus-transparent.png";
 ---
@@ -56,10 +57,10 @@ import fotoClaus from "../assets/FotoClaus-transparent.png";
         habe. Da gibt es schon noch so einiges mehr.
       </p>
       <div class="hero-actions">
-        <a class="button" href="/hobbies">Zu meinen Hobbies</a><a
+        <a class="button" href="/hobbies">Zu meinen Hobbies</a><ProtectedEmailLink
           class="button secondary"
-          href="mailto:claus@schiroky.com">Nachricht senden</a
-        >
+          label="Nachricht senden"
+        />
       </div>
     </div>
   </section>

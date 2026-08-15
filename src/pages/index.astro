@@ -79,10 +79,6 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     padding-top: 2rem;
   }
 
-  .grid .card {
-    border-color: transparent;
-  }
-
   .grid .card h3 {
     transition: color 0.2s ease;
   }
@@ -97,52 +93,6 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
   .card-from-right {
     animation: card-from-right 0.75s ease-out both;
-  }
-
-  @keyframes card-from-left {
-    from {
-      opacity: 0;
-      transform: translateX(-5rem);
-    }
-
-    to {
-      opacity: 1;
-      transform: translateX(0);
-    }
-  }
-
-  @keyframes card-from-right {
-    from {
-      opacity: 0;
-      transform: translateX(5rem);
-    }
-
-    to {
-      opacity: 1;
-      transform: translateX(0);
-    }
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    .card-from-left,
-    .card-from-right {
-      animation: none;
-    }
-  }
-
-  .grid .card::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    padding: 1px;
-    border-radius: inherit;
-    background: linear-gradient(90deg, #ff2d95, #00f5ff);
-    -webkit-mask:
-      linear-gradient(#000 0 0) content-box,
-      linear-gradient(#000 0 0);
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
-    pointer-events: none;
   }
 
   .section-head {

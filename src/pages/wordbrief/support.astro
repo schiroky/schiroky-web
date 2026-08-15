@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import ProtectedEmailLink from "../../components/ProtectedEmailLink.astro";
 import WordBriefMenu from "../../components/WordBriefMenu.astro";
 ---
 
@@ -10,7 +11,7 @@ import WordBriefMenu from "../../components/WordBriefMenu.astro";
   <section class="content-shell">
     <div class="container">
       <span class="eyebrow no-line home-format">WordBrief 365</span><h1
-        class="gradient-text support-title"
+        class="gradient-text content-title-padded support-title"
       >
         Support
       </h1>
@@ -32,10 +33,10 @@ import WordBriefMenu from "../../components/WordBriefMenu.astro";
             werden kann. Sollte es Fragen geben, Anregungen, Kritik – einfach{
               " "
             }
-            <a
-              href="mailto:claus@schiroky.com?subject=WordBrief%20365%20Anfrage"
-              >eine E-Mail senden</a
-            >. Bitte beschreiben Sie dabei das Problem so detailliert wie
+            <ProtectedEmailLink
+              label="eine E-Mail senden"
+              subject="WordBrief 365 Anfrage"
+            />. Bitte beschreiben Sie dabei das Problem so detailliert wie
             möglich. Ein Bildschirmfoto (Screenshoot) des Fehlers und/oder eine
             schrittweise Beschreibung zur Reproduktion des Problems sind dabei
             sehr hilfreich.
@@ -108,10 +109,6 @@ import WordBriefMenu from "../../components/WordBriefMenu.astro";
 </BaseLayout>
 
 <style>
-  .prose h2 {
-    font-size: 1.2rem;
-  }
-
   .prose h3 {
     font-size: 1.1rem;
   }
@@ -126,13 +123,4 @@ import WordBriefMenu from "../../components/WordBriefMenu.astro";
     margin-top: 0.4rem;
   }
 
-  :global(.content-shell h1.support-title) {
-    display: table;
-    width: auto;
-    overflow: visible;
-    line-height: 1.08;
-    padding: 0 0.12em 0.3em 0;
-    margin-bottom: -0.3em;
-    background-image: linear-gradient(90deg, #ff2d95 0%, #00f5ff 100%);
-  }
 </style>

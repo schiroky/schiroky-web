@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import ProtectedEmailLink from "../components/ProtectedEmailLink.astro";
 ---
 
 <BaseLayout
@@ -21,10 +22,10 @@ import BaseLayout from "../layouts/BaseLayout.astro";
           rel="noreferrer">DDG</a
         >):
       </p><p>
-        Claus Schiroky<br />E-Mail: <a
+        Claus Schiroky<br />E-Mail: <ProtectedEmailLink
           class="footer-style-hover"
-          href="mailto:claus@schiroky.com">claus@schiroky.com</a
-        >
+          showAddress
+        />
       </p>
       <h2>Rechtliche Hinweise</h2><p>
         Alle Angaben und Inhalte dieses Angebotes wurden sorgfältig erstellt und
@@ -59,15 +60,3 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     </div>
   </section>
 </BaseLayout>
-
-<style>
-  .prose h2 {
-    font-size: 1.2rem;
-  }
-
-  :global(.content-shell h1.impressum-title) {
-    display: table;
-    width: auto;
-    background-image: linear-gradient(90deg, #ff2d95 0%, #00f5ff 100%);
-  }
-</style>
