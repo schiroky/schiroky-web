@@ -1,0 +1,43 @@
+---
+interface Props {
+  label?: string;
+  showAddress?: boolean;
+  subject?: string;
+  class?: string;
+}
+
+const {
+  label = "E-Mail senden",
+  showAddress = false,
+  subject = "",
+  class: className,
+} = Astro.props;
+---
+
+<a
+  class={className}
+  data-protected-email
+  data-email-code="99,108,97,117,115,64,115,99,104,105,114,111,107,121,46,99,111,109"
+  data-show-address={showAddress ? "" : undefined}
+  data-subject={subject}>{showAddress ? "E-Mail-Adresse anzeigen" : label}</a
+>
+
+<script>
+  document
+    .querySelectorAll<HTMLAnchorElement>(
+      "a[data-protected-email]:not([data-email-ready])",
+    )
+    .forEach((link) => {
+      const emailAddress = String.fromCharCode(
+        ...(link.dataset.emailCode ?? "").split(",").map(Number),
+      );
+      const subject = link.dataset.subject;
+      link.href = `mailto:${emailAddress}${subject ? `?subject=${encodeURIComponent(subject)}` : ""}`;
+
+      if (link.hasAttribute("data-show-address")) {
+        link.textContent = emailAddress;
+      }
+
+      link.dataset.emailReady = "";
+    });
+</script>
