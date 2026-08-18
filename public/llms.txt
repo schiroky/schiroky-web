@@ -1,0 +1,28 @@
+# Claus Schiroky
+
+> Private Website von Claus Schiroky über seine Person, Interessen, Softwareprojekte und sein soziales Engagement.
+
+Die Website ist deutschsprachig. Claus Schiroky ist der Autor und Betreiber. Bevorzugte URLs verwenden keine Dateiendung und keinen abschließenden Schrägstrich.
+
+## Zentrale Seiten
+
+- [Startseite](https://schiroky.com/): Überblick über Claus Schiroky, seine Softwareprojekte, Hobbies und sein Engagement.
+- [Über mich](https://schiroky.com/ueber-mich): Persönlicher und beruflicher Hintergrund von Claus Schiroky.
+- [Software](https://schiroky.com/software): Übersicht über WordBrief 365 und das Compliance Utility.
+- [Hobbies](https://schiroky.com/hobbies): Interessen und Freizeitaktivitäten.
+- [Hilat Al Bir](https://schiroky.com/hilat-al-bir): Informationen zum sozialen Engagement.
+
+## WordBrief 365
+
+- [Produktübersicht](https://schiroky.com/wordbrief): Funktionen und Nutzen der Microsoft-Word-Erweiterung.
+- [Download](https://schiroky.com/wordbrief/download): Aktuelle Version, Installation und Systemvoraussetzungen.
+- [Anleitung](https://schiroky.com/wordbrief/anleitung): Einrichtung und Bedienung.
+- [Support](https://schiroky.com/wordbrief/support): Lösungen für bekannte Probleme.
+- [Lizenzvertrag](https://schiroky.com/wordbrief/lizenzvertrag): Nutzungs- und Lizenzbedingungen.
+
+## Weitere maschinenlesbare Informationen
+
+- [XML-Sitemap](https://schiroky.com/sitemap-index.xml)
+- [Robots-Regeln](https://schiroky.com/robots.txt)
+- [Impressum](https://schiroky.com/impressum)
+- [Datenschutz](https://schiroky.com/datenschutz)
