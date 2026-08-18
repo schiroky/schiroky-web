@@ -20,6 +20,47 @@ const optimizedSocialImage = await getImage({
 const socialImage = new URL(optimizedSocialImage.src, Astro.site);
 const personId = new URL("/#person", Astro.site).href;
 const websiteId = new URL("/#website", Astro.site).href;
+const pageId = `${canonicalUrl.href}#webpage`;
+const breadcrumbLabels: Record<string, string> = {
+  software: "Software",
+  wordbrief: "WordBrief 365",
+  download: "Download",
+  anleitung: "Anleitung",
+  support: "Support",
+  lizenzvertrag: "Lizenzvertrag",
+  hobbies: "Hobbies",
+  "ueber-mich": "Über mich",
+  "hilat-al-bir": "Hilat Al Bir",
+  datenschutz: "Datenschutz",
+  impressum: "Impressum",
+};
+const pathParts = Astro.url.pathname.split("/").filter(Boolean);
+const breadcrumbSchema = pathParts.length
+  ? {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Startseite",
+          item: new URL("/", Astro.site).href,
+        },
+        ...pathParts.map((part, index) => ({
+          "@type": "ListItem",
+          position: index + 2,
+          name: breadcrumbLabels[part] ?? part,
+          item: new URL(`/${pathParts.slice(0, index + 1).join("/")}`, Astro.site)
+            .href,
+        })),
+      ],
+    }
+  : undefined;
+const additionalSchemas = structuredData
+  ? Array.isArray(structuredData)
+    ? structuredData
+    : [structuredData]
+  : [];
 const schemas = [
   {
     "@context": "https://schema.org",
@@ -48,6 +89,7 @@ const schemas = [
   {
     "@context": "https://schema.org",
     "@type": pageType,
+    "@id": pageId,
     url: canonicalUrl.href,
     name: title,
     description,
@@ -55,7 +97,8 @@ const schemas = [
     isPartOf: { "@id": websiteId },
     mainEntity: pageType === "ProfilePage" ? { "@id": personId } : undefined,
   },
-  ...(structuredData ? [structuredData] : []),
+  ...(breadcrumbSchema ? [breadcrumbSchema] : []),
+  ...additionalSchemas,
 ];
 ---
 
