@@ -6,19 +6,19 @@ Wir verpflichten uns, allen Personen, die an diesem Projekt mitwirken, ein respe
 
 Von den Teilnehmenden wird erwartet, dass sie:
 
-* respektvoll und konstruktiv kommunizieren.
-* unterschiedliche Standpunkte und technische Meinungen akzeptieren.
-* Diskussionen auf das Projekt und das jeweils behandelte Thema konzentrieren.
-* konstruktives Feedback professionell geben und annehmen.
-* die Privatsphäre und die Rechte anderer respektieren.
+- respektvoll und konstruktiv kommunizieren.
+- unterschiedliche Standpunkte und technische Meinungen akzeptieren.
+- Diskussionen auf das Projekt und das jeweils behandelte Thema konzentrieren.
+- konstruktives Feedback professionell geben und annehmen.
+- die Privatsphäre und die Rechte anderer respektieren.
 
 Zu inakzeptablem Verhalten gehören:
 
-* Belästigung, Diskriminierung oder persönliche Angriffe.
-* Beleidigende, bedrohliche oder absichtlich störende Kommentare.
-* Trolling oder wiederholtes themenfremdes Verhalten mit dem Ziel, Diskussionen zu stören.
-* Die Veröffentlichung privater Informationen einer anderen Person ohne deren Zustimmung.
-* Jegliches andere Verhalten, das in einem professionellen Umfeld vernünftigerweise als unangemessen angesehen werden würde.
+- Belästigung, Diskriminierung oder persönliche Angriffe.
+- Beleidigende, bedrohliche oder absichtlich störende Kommentare.
+- Trolling oder wiederholtes themenfremdes Verhalten mit dem Ziel, Diskussionen zu stören.
+- Die Veröffentlichung privater Informationen einer anderen Person ohne deren Zustimmung.
+- Jegliches andere Verhalten, das in einem professionellen Umfeld vernünftigerweise als unangemessen angesehen werden würde.
 
 ### Geltungsbereich
 
